@@ -1,8 +1,6 @@
-﻿using System.Globalization;
-using goodWayCoding.ValueObject;
+﻿using goodWayCoding.Immutable;
 
-var money1 = new Money(10, new RegionInfo("en-US"));
-var money2 = new Money(20, new RegionInfo("en-US"));
-var total = money1.add(money2);
+var weaponA = new Weapon(new AttackPower(20));
+var weaponB = new Weapon(new AttackPower(30));
 
-Console.WriteLine(total.amount);
+var reinForcedWeaponA = weaponA.reinForce(new AttackPower(30));
