@@ -1,3 +1,5 @@
+using goodWayCoding.StrategyPattern.VO;
+
 namespace goodWayCoding.StrategyPattern.Magic;
 
 public class Fire : IMagic
@@ -9,19 +11,20 @@ public class Fire : IMagic
         this.member = member;
     }
 
-    public int attackPower()
+    public AttackPower attackPower()
     {
-        return 20 + (int)(member.level * 0.5);
+        var value = 20 + (int)(member.level * 0.5);
+        return new AttackPower(value);
     }
 
-    public int costMagicPoint()
+    public MagicPoint costMagicPoint()
     {
-        return 2;
+        return new MagicPoint(2);
     }
 
-    public int costTechnicalPoint()
+    public TechnicalPoint costTechnicalPoint()
     {
-        return 0;
+        return new TechnicalPoint(0);
     }
 
     public string name()

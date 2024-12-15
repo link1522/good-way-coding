@@ -1,3 +1,5 @@
+using goodWayCoding.StrategyPattern.VO;
+
 namespace goodWayCoding.StrategyPattern.Magic;
 
 public class HellFire : IMagic
@@ -9,19 +11,21 @@ public class HellFire : IMagic
         this.member = member;
     }
 
-    public int attackPower()
+    public AttackPower attackPower()
     {
-        return 200 + (int)(member.magicAttack * 0.5 + member.vitality * 2);
+        var value = 200 + (int)(member.magicAttack * 0.5 + member.vitality * 2);
+        return new AttackPower(value);
     }
 
-    public int costMagicPoint()
+    public MagicPoint costMagicPoint()
     {
-        return 16;
+        return new MagicPoint(16);
     }
 
-    public int costTechnicalPoint()
+    public TechnicalPoint costTechnicalPoint()
     {
-        return 20 + (int)(member.level * 0.4);
+        var value = 20 + (int)(member.level * 0.4);
+        return new TechnicalPoint(value);
     }
 
     public string name()

@@ -1,5 +1,6 @@
 ﻿using goodWayCoding.StrategyPattern;
 using goodWayCoding.StrategyPattern.Magic;
+using goodWayCoding.StrategyPattern.VO;
 
 var magics = new Dictionary<MagicType, IMagic>();
 

@@ -1,3 +1,6 @@
+using goodWayCoding.StrategyPattern.VO;
+using Microsoft.VisualBasic;
+
 namespace goodWayCoding.StrategyPattern.Magic;
 
 public class Shiden : IMagic
@@ -9,19 +12,22 @@ public class Shiden : IMagic
         this.member = member;
     }
 
-    public int attackPower()
+    public AttackPower attackPower()
     {
-        return 50 + (int)(member.agility * 1.5);
+        var value = 50 + (int)(member.agility * 1.5);
+        return new AttackPower(value);
     }
 
-    public int costMagicPoint()
+    public MagicPoint costMagicPoint()
     {
-        return 5 + (int)(member.level * 0.2);
+        var value = 5 + (int)(member.level * 0.2);
+        return new MagicPoint(value);
     }
 
-    public int costTechnicalPoint()
+    public TechnicalPoint costTechnicalPoint()
     {
-        return 5;
+        return new TechnicalPoint(5);
+
     }
 
     public string name()

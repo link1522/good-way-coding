@@ -1,3 +1,5 @@
+using goodWayCoding.StrategyPattern.VO;
+
 namespace goodWayCoding.StrategyPattern.Magic;
 
 /*
@@ -7,7 +9,7 @@ namespace goodWayCoding.StrategyPattern.Magic;
 public interface IMagic
 {
     string name();
-    int costMagicPoint();
-    int attackPower();
-    int costTechnicalPoint();
+    MagicPoint costMagicPoint();
+    AttackPower attackPower();
+    TechnicalPoint costTechnicalPoint();
 }
