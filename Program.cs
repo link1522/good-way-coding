@@ -1,6 +1,23 @@
-﻿using goodWayCoding.Immutable;
+﻿using goodWayCoding.StrategyPattern;
+using goodWayCoding.StrategyPattern.Magic;
 
-var weaponA = new Weapon(new AttackPower(20));
-var weaponB = new Weapon(new AttackPower(30));
+var magics = new Dictionary<MagicType, IMagic>();
 
-var reinForcedWeaponA = weaponA.reinForce(new AttackPower(30));
+var member = new Member
+{
+    level = 10,
+    vitality = 12,
+    magicAttack = 15,
+    agility = 8
+};
+
+var fire = new Fire(member);
+var shiden = new Shiden(member);
+var hellFire = new HellFire(member);
+
+magics.Add(MagicType.fire, fire);
+magics.Add(MagicType.shiden, shiden);
+magics.Add(MagicType.hellFire, hellFire);
+
+var magicManager = new MagicManager(magics);
+magicManager.magicAttack(MagicType.hellFire);
